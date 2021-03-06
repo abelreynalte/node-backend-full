@@ -215,8 +215,8 @@ const mostrarImagenCloudinary = async(req, res = response ) => {
         const resource = await cloudinary.api.resource( public_id )
         console.log(resource.secure_url);
         if ( resource ) {
-            const pathImagen = path.join( __dirname, '../assets/no-image.jpg') //path.join( resource.secure_url);
-            return res.sendFile( pathImagen );
+            //const pathImagen = path.join( __dirname, '../assets/no-image.jpg');
+            return res.sendFile( resource.secure_url );
         }
     }
 
